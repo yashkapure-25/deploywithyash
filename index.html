@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yash Kapure - AWS & DevOps Engineer | Cloud Infrastructure Specialist</title>
+    <meta name="description" content="Professional AWS & DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, containerization, and Infrastructure as Code.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./Assets/img/DevOps.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              bg: {
+                dark: '#0A0E27',
+                darker: '#050811',
+                card: '#111827',
+              },
+              aws: {
+                blue: '#FF9900',
+                cyan: '#00D9FF',
+              },
+              accent: {
+                blue: '#3B82F6',
+                cyan: '#06B6D4',
+                purple: '#8B5CF6',
+                pink: '#EC4899',
+                orange: '#F97316',
+                green: '#10B981',
+              }
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              heading: ['Sora', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'gradient': 'gradient-shift 3s ease infinite',
+              'spin-slow': 'spin 20s linear infinite',
+              'spin-reverse-slow': 'spin-reverse 20s linear infinite',
+              'bounce-slow': 'bounce 3s infinite',
+              'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0) translateX(0)' },
+                '50%': { transform: 'translateY(-30px) translateX(20px)' },
+              },
+              'gradient-shift': {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+              },
+              'spin-reverse': {
+                'from': { transform: 'rotate(360deg)' },
+                'to': { transform: 'rotate(0deg)' },
+              },
+              blob: {
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --bg-color: #0A0E27;
+        --text-color: #FFFFFF;
+        --card-bg: rgba(17, 24, 39, 0.7);
+        --card-border: rgba(59, 130, 246, 0.3);
+        --nav-bg: rgba(10, 14, 39, 0.7);
+        
+        --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+        --gradient-secondary: linear-gradient(135deg, #FF9900 0%, #00D9FF 100%);
+        --gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+        --gradient-orange: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+        --gradient-rainbow: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 25%, #EC4899 50%, #F97316 75%, #FBBF24 100%);
+        --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      html.light {
+        --bg-color: #F0F4F8;
+        --text-color: #1F2937;
+        --card-bg: rgba(255, 255, 255, 0.65);
+        --card-border: rgba(59, 130, 246, 0.2);
+        --nav-bg: rgba(255, 255, 255, 0.8);
+        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.2);
+        --bg-darker: #E5E7EB;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        /* Simple gradient base, the liquid blobs in App.tsx will handle the rest */
+        background-image: linear-gradient(to bottom, var(--bg-color), var(--bg-darker, #050811));
+        background-attachment: fixed;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      html.light body {
+        background-image: linear-gradient(to bottom, var(--bg-color), #E5E7EB);
+      }
+
+      /* Liquid Glass Theme Utilities */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        
+        /* Iridescent/Glossy borders */
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        
+        box-shadow: 
+          0 8px 32px 0 rgba(0, 0, 0, 0.3), 
+          inset 0 0 32px 0 rgba(255, 255, 255, 0.02); /* Inner glow */
+          
+        border-radius: 24px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 
+          0 15px 40px 0 rgba(0, 0, 0, 0.4),
+          inset 0 0 20px 0 rgba(255, 255, 255, 0.08),
+          0 0 20px rgba(59, 130, 246, 0.2); /* Subtle Blue glow */
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      /* Light mode adjustments for Liquid Glass */
+      html.light .glass-card {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 
+          0 8px 32px 0 rgba(31, 38, 135, 0.1),
+          inset 0 0 20px 0 rgba(255, 255, 255, 0.5);
+      }
+      html.light .glass-card:hover {
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.15);
+      }
+      
+      .text-gradient {
+        background: var(--gradient-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .text-gradient-rainbow {
+        background: var(--gradient-rainbow);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      .btn-gradient {
+        background: var(--gradient-rainbow);
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+        box-shadow: var(--shadow-glow);
+      }
+
+      /* Light Mode Text Overrides */
+      html.light .text-gray-300, 
+      html.light .text-gray-400 {
+        color: #4B5563;
+      }
+      html.light .text-gray-500 {
+        color: #6B7280;
+      }
+      html.light .text-white {
+        color: #111827;
+      }
+      html.light .hover\:text-white:hover {
+        color: #000000;
+      }
+      
+      html.light .bg-white\/5 {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      html.light .border-white\/10 {
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-color);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3B82F6;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #06B6D4;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
