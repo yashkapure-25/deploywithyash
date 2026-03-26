@@ -11,6 +11,7 @@
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "@react-three/fiber": "^9.5.0",
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.23.25",
     "howler": "^2.2.4",
     "lucide-react": "^0.556.0",

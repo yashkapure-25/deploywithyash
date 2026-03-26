@@ -11,8 +11,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import DevOpsLoader from './components/DevOpsLoader';
 import Snowfall from './components/Snowfall';
-import Rainfall from './components/Rainfall';
 import Silk from './components/Silk';
+import { Analytics } from '@vercel/analytics/react';
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -54,6 +54,7 @@ const App: React.FC = () => {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 };
