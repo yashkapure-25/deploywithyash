@@ -16,7 +16,10 @@ export interface Experience {
   company: string;
   role: string;
   period: string;
+  location?: string;
+  type?: string;         // e.g. 'Internship' | 'Full-time'
   responsibilities: string[];
+  skills?: string[];
   icon: LucideIcon;
 }
 

@@ -3,166 +3,402 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yash Kapure - AWS & DevOps Engineer | Cloud Infrastructure Specialist</title>
-    <meta name="description" content="Professional AWS & DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, containerization, and Infrastructure as Code.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="./Assets/img/DevOps.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              bg: {
-                dark: '#0A0E27',
-                darker: '#050811',
-                card: '#111827',
-              },
-              aws: {
-                blue: '#FF9900',
-                cyan: '#00D9FF',
-              },
-              accent: {
-                blue: '#3B82F6',
-                cyan: '#06B6D4',
-                purple: '#8B5CF6',
-                pink: '#EC4899',
-                orange: '#F97316',
-                green: '#10B981',
-              }
-            },
-            fontFamily: {
-              sans: ['Montserrat', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
-              heading: ['Sora', 'sans-serif'],
-              mono: ['Fira Code', 'monospace'],
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'gradient': 'gradient-shift 3s ease infinite',
-              'spin-slow': 'spin 20s linear infinite',
-              'spin-reverse-slow': 'spin-reverse 20s linear infinite',
-              'bounce-slow': 'bounce 3s infinite',
-              'blob': 'blob 10s infinite',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0) translateX(0)' },
-                '50%': { transform: 'translateY(-30px) translateX(20px)' },
-              },
-              'gradient-shift': {
-                '0%, 100%': { 'background-position': '0% 50%' },
-                '50%': { 'background-position': '100% 50%' },
-              },
-              'spin-reverse': {
-                'from': { transform: 'rotate(360deg)' },
-                'to': { transform: 'rotate(0deg)' },
-              },
-              blob: {
-                "0%": { transform: "translate(0px, 0px) scale(1)" },
-                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-                "100%": { transform: "translate(0px, 0px) scale(1)" },
-              }
-            }
+
+    <!-- ═══════════════════════════════════════════════
+         PRIMARY SEO META TAGS
+    ═══════════════════════════════════════════════ -->
+    <title>Yash Kapure | AWS & DevOps Engineer | Cloud Infrastructure Expert</title>
+    <meta name="description" content="Yash Kapure is an AWS & DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, Kubernetes, Terraform, Docker, and Infrastructure as Code. Based in Mumbai, India. Available for internships & projects." />
+    <meta name="keywords" content="Yash Kapure, AWS Engineer, DevOps Engineer, Cloud Infrastructure, CI/CD, Kubernetes, Terraform, Docker, Jenkins, Mumbai, India, AWS Cloud Practitioner, Full Stack Developer" />
+    <meta name="author" content="Yash Kapure" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0A0E27" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- ═══════════════════════════════════════════════
+         CANONICAL URL
+    ═══════════════════════════════════════════════ -->
+    <link rel="canonical" href="https://yashkapure.dev/" />
+
+    <!-- ═══════════════════════════════════════════════
+         OPEN GRAPH (Facebook / LinkedIn)
+    ═══════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yash Kapure Portfolio" />
+    <meta property="og:title" content="Yash Kapure | AWS & DevOps Engineer" />
+    <meta property="og:description" content="AWS & DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, Kubernetes, Terraform, and containerization. Building scalable solutions on AWS." />
+    <meta property="og:url" content="https://yashkapure.dev/" />
+    <meta property="og:image" content="https://yashkapure.dev/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Yash Kapure - AWS & DevOps Engineer Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ═══════════════════════════════════════════════
+         TWITTER CARD TAGS
+    ═══════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@YashKapure25" />
+    <meta name="twitter:creator" content="@YashKapure25" />
+    <meta name="twitter:title" content="Yash Kapure | AWS & DevOps Engineer" />
+    <meta name="twitter:description" content="AWS & DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, Kubernetes, Terraform, and containerization." />
+    <meta name="twitter:image" content="https://yashkapure.dev/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Yash Kapure - AWS & DevOps Portfolio" />
+
+    <!-- ═══════════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD SCHEMAS
+    ═══════════════════════════════════════════════ -->
+
+    <!-- Schema: Person (Primary Identity) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://yashkapure.dev/#person",
+      "name": "Yash Kapure",
+      "givenName": "Yash",
+      "familyName": "Kapure",
+      "jobTitle": "AWS & DevOps Engineer",
+      "description": "AWS & DevOps Engineer specializing in cloud infrastructure, CI/CD pipelines, Kubernetes, Terraform, Docker, and Infrastructure as Code.",
+      "url": "https://yashkapure.dev/",
+      "image": "https://yashkapure.dev/Assets/img/Profile.jpg",
+      "email": "kapure.yashp25@gmail.com",
+      "telephone": "+91-8669207321",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://github.com/yashkapure-25",
+        "https://www.linkedin.com/in/yash-kapure-full-stack-developer/",
+        "https://twitter.com/YashKapure25",
+        "https://medium.com/@ypkapure74"
+      ],
+      "knowsAbout": [
+        "Amazon Web Services",
+        "DevOps",
+        "Cloud Infrastructure",
+        "Kubernetes",
+        "Docker",
+        "Terraform",
+        "Jenkins",
+        "CI/CD Pipelines",
+        "Infrastructure as Code",
+        "Linux",
+        "Networking"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Cloud Quest: Cloud Practitioner",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Educate - Getting Started with Compute",
+          "credentialCategory": "badge",
+          "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+        }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "GenieUs Tech",
+        "jobTitle": "AWS & DevOps Intern"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "New Horizon Institute of Technology & Management",
+        "address": { "addressLocality": "Thane", "addressCountry": "IN" }
+      }
+    }
+    </script>
+
+    <!-- Schema: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://yashkapure.dev/#website",
+      "name": "Yash Kapure Portfolio",
+      "url": "https://yashkapure.dev/",
+      "description": "Professional portfolio of Yash Kapure, AWS & DevOps Engineer",
+      "author": { "@id": "https://yashkapure.dev/#person" },
+      "inLanguage": "en-US",
+      "copyrightYear": "2026",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yashkapure.dev/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yashkapure.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://yashkapure.dev/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Experience",
+          "item": "https://yashkapure.dev/#experience"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Projects",
+          "item": "https://yashkapure.dev/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Certifications",
+          "item": "https://yashkapure.dev/#certifications"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Contact",
+          "item": "https://yashkapure.dev/#contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema: ProfilePage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "Yash Kapure - AWS & DevOps Engineer Portfolio",
+      "url": "https://yashkapure.dev/",
+      "mainEntity": { "@id": "https://yashkapure.dev/#person" },
+      "dateCreated": "2024-01-01",
+      "dateModified": "2026-03-17"
+    }
+    </script>
+
+    <!-- Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Yash Kapure specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yash Kapure specializes in AWS cloud infrastructure, DevOps practices, CI/CD pipeline automation, Kubernetes container orchestration, Terraform Infrastructure as Code, and Docker containerization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Yash Kapure available for DevOps projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Yash Kapure is available for AWS DevOps projects, cloud architecture consulting, and internship opportunities. You can contact him at kapure.yashp25@gmail.com."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What AWS certifications does Yash Kapure hold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yash Kapure holds multiple AWS badges including AWS Cloud Quest: Cloud Practitioner, AWS Educate badges for Compute, Storage, Networking, Databases, Security, Serverless, and Machine Learning."
           }
         }
-      }
+      ]
+    }
     </script>
+
+    <!-- ═══════════════════════════════════════════════
+         FAVICON & ICONS
+    ═══════════════════════════════════════════════ -->
+    <link rel="icon" type="image/png" href="/Assets/img/DevOps.png" />
+    <link rel="apple-touch-icon" href="/Assets/img/DevOps.png" />
+    <link rel="shortcut icon" href="/Assets/img/DevOps.png" type="image/x-icon" />
+
+    <!-- ═══════════════════════════════════════════════
+         FONT PRECONNECT & LOADING (Performance)
+    ═══════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://use.typekit.net/syn6fsl.css">
+
+
+    <!-- ═══════════════════════════════════════════════
+         GLOBAL DESIGN SYSTEM & CSS VARIABLES
+    ═══════════════════════════════════════════════ -->
     <style>
+      /* ═══ Metropolitan Velocity — Glassmorphism ═══ */
       :root {
-        --bg-color: #0A0E27;
-        --text-color: #FFFFFF;
-        --card-bg: rgba(17, 24, 39, 0.7);
-        --card-border: rgba(59, 130, 246, 0.3);
-        --nav-bg: rgba(10, 14, 39, 0.7);
-        
-        --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
-        --gradient-secondary: linear-gradient(135deg, #FF9900 0%, #00D9FF 100%);
-        --gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-        --gradient-orange: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
-        --gradient-rainbow: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 25%, #EC4899 50%, #F97316 75%, #FBBF24 100%);
-        --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
-        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+        --mv-grey:   #373B3E;
+        --mv-black:  #0A0A0A;
+        --mv-red:    #D90429;
+        --mv-silver: #8D99AE;
+        --mv-white:  #EDF2F4;
+        --bg-color:   #373B3E;
+        --bg-darker:  #25282B;
+        --text-color: #EDF2F4;
+        --card-bg:    rgba(10, 10, 10, 0.35);
+        --card-border: rgba(217, 4, 41, 0.45);
+        --nav-bg:     rgba(10, 10, 10, 0.30);
+        --gradient-primary:   linear-gradient(135deg, #D90429 0%, #8D99AE 100%);
+        --gradient-secondary: linear-gradient(135deg, #D90429 0%, #EDF2F4 100%);
+        --gradient-purple:    linear-gradient(135deg, #D90429 0%, #8D99AE 100%);
+        --gradient-orange:    linear-gradient(135deg, #D90429 0%, #8D99AE 100%);
+        --gradient-rainbow:   linear-gradient(135deg, #D90429 0%, #8D99AE 55%, #EDF2F4 100%);
+        --shadow-glow: 0 0 24px rgba(217, 4, 41, 0.5);
+        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.65);
+      }
+      html.light {
+        --bg-color:   #EDF2F4;
+        --bg-darker:  #D1D8DF;
+        --text-color: #0A0A0A;
+        --card-bg:    rgba(255, 255, 255, 0.45);
+        --card-border: rgba(217, 4, 41, 0.25);
+        --nav-bg:     rgba(255, 255, 255, 0.30);
+        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.12);
+        --shadow-glow: 0 0 18px rgba(217, 4, 41, 0.25);
       }
 
-      html.light {
-        --bg-color: #F0F4F8;
-        --text-color: #1F2937;
-        --card-bg: rgba(255, 255, 255, 0.65);
-        --card-border: rgba(59, 130, 246, 0.2);
-        --nav-bg: rgba(255, 255, 255, 0.8);
-        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
-        --shadow-glow: 0 0 15px rgba(59, 130, 246, 0.2);
-        --bg-darker: #E5E7EB;
+      /* ── Base ────────────────────────────────── */
+      *, *::before, *::after {
+        box-sizing: border-box;
       }
 
       body {
         background-color: var(--bg-color);
         color: var(--text-color);
-        /* Simple gradient base, the liquid blobs in App.tsx will handle the rest */
-        background-image: linear-gradient(to bottom, var(--bg-color), var(--bg-darker, #050811));
+        background-image: linear-gradient(145deg, #373B3E 0%, #25282B 60%, #1A1C1E 100%);
         background-attachment: fixed;
         transition: background-color 0.3s ease, color 0.3s ease;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
-      
       html.light body {
-        background-image: linear-gradient(to bottom, var(--bg-color), #E5E7EB);
+        background-image: linear-gradient(145deg, #EDF2F4 0%, #D1D8DF 100%);
       }
 
-      /* Liquid Glass Theme Utilities */
+      /* ── Skip Navigation (Accessibility) ──────── */
+      .skip-nav {
+        position: absolute; top: -100%; left: 0;
+        background: #D90429; color: #EDF2F4;
+        padding: 0.5rem 1rem; z-index: 9999;
+        font-weight: 700; transition: top 0.2s; border-radius: 0 0 8px 0;
+      }
+      .skip-nav:focus { top: 0; }
+
+      /* ── iOS 26 Glassmorphism Navbar ────────── */
+      /* At top: navbar is invisible — merges into hero */
+      .nav-glass {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom: 0.5px solid transparent;
+        box-shadow: none;
+        transition: background 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, backdrop-filter 0.45s ease;
+      }
+      /* On scroll: glass pane materialises */
+      .nav-glass.scrolled {
+        background: rgba(10, 10, 10, 0.60);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border-bottom-color: rgba(217, 4, 41, 0.45);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+      }
+      html.light .nav-glass {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom-color: transparent;
+      }
+      html.light .nav-glass.scrolled {
+        background: rgba(255, 255, 255, 0.70);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border-bottom-color: rgba(217, 4, 41, 0.35);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+      }
+      /* Mobile: always transparent (already handled above but explicit) */
+      @media (max-width: 767px) {
+        .nav-glass,
+        .nav-glass.scrolled {
+          background: transparent !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
+          border-bottom: none !important;
+          box-shadow: none !important;
+        }
+      }
+
+      /* ── Glassmorphism Cards ───────────────────── */
       .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        
-        /* Iridescent/Glossy borders */
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        border-left: 1px solid rgba(255, 255, 255, 0.15);
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        
-        box-shadow: 
-          0 8px 32px 0 rgba(0, 0, 0, 0.3), 
-          inset 0 0 32px 0 rgba(255, 255, 255, 0.02); /* Inner glow */
-          
-        border-radius: 24px;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      
-      .glass-card:hover {
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: 
-          0 15px 40px 0 rgba(0, 0, 0, 0.4),
-          inset 0 0 20px 0 rgba(255, 255, 255, 0.08),
-          0 0 20px rgba(59, 130, 246, 0.2); /* Subtle Blue glow */
-        transform: translateY(-5px);
-        border-color: rgba(255, 255, 255, 0.25);
+        background: rgba(10, 10, 10, 0.35);
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+        border: 0.5px solid rgba(141, 153, 174, 0.18);
+        border-top-color: rgba(141, 153, 174, 0.35);
+        border-left-color: rgba(141, 153, 174, 0.25);
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.07),
+          inset 0 0 40px rgba(55, 59, 62, 0.20);
+        border-radius: 20px;
+        transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
-      /* Light mode adjustments for Liquid Glass */
+      .glass-card:hover {
+        background: rgba(10, 10, 10, 0.52);
+        border-color: rgba(217, 4, 41, 0.65);
+        border-top-color: rgba(217, 4, 41, 0.85);
+        box-shadow:
+          0 18px 50px rgba(0, 0, 0, 0.55),
+          inset 0 1px 0 rgba(217, 4, 41, 0.15),
+          inset 0 0 40px rgba(217, 4, 41, 0.06),
+          0 0 30px rgba(217, 4, 41, 0.28);
+        transform: translateY(-5px);
+      }
+
       html.light .glass-card {
-        background: rgba(255, 255, 255, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        box-shadow: 
-          0 8px 32px 0 rgba(31, 38, 135, 0.1),
-          inset 0 0 20px 0 rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.45);
+        border: 0.5px solid rgba(141, 153, 174, 0.30);
+        border-top-color: rgba(141, 153, 174, 0.50);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8);
       }
       html.light .glass-card:hover {
-        background: rgba(255, 255, 255, 0.7);
-        box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.15);
+        background: rgba(255, 255, 255, 0.65);
+        border-color: rgba(217, 4, 41, 0.55);
+        box-shadow: 0 18px 48px rgba(0,0,0,0.12), 0 0 22px rgba(217,4,41,0.20);
       }
-      
+
+      /* ── Text Gradient Utilities ─────────────── */
       .text-gradient {
         background: var(--gradient-secondary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-      
+
       .text-gradient-rainbow {
         background: var(--gradient-rainbow);
         -webkit-background-clip: text;
@@ -173,63 +409,79 @@
       }
 
       .btn-gradient {
-        background: var(--gradient-rainbow);
-        background-size: 200% 200%;
-        animation: gradient-shift 3s ease infinite;
-        box-shadow: var(--shadow-glow);
+        background: rgba(10, 10, 10, 0.80);
+        border: 1.5px solid #D90429;
+        box-shadow: 0 0 0 rgba(217,4,41,0), inset 0 1px 0 rgba(255,255,255,0.07);
+        backdrop-filter: blur(8px);
+        transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      }
+      .btn-gradient:hover {
+        background: #D90429;
+        box-shadow: 0 0 30px rgba(217, 4, 41, 0.65), inset 0 1px 0 rgba(255,255,255,0.12);
       }
 
-      /* Light Mode Text Overrides */
-      html.light .text-gray-300, 
-      html.light .text-gray-400 {
-        color: #4B5563;
+      /* micro-pulse on Ignition Red accent elements */
+      @keyframes red-pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(217,4,41,0.45); }
+        50%       { box-shadow: 0 0 14px 4px rgba(217,4,41,0.12); }
       }
-      html.light .text-gray-500 {
-        color: #6B7280;
-      }
-      html.light .text-white {
-        color: #111827;
-      }
-      html.light .hover\:text-white:hover {
-        color: #000000;
-      }
-      
-      html.light .bg-white\/5 {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-      html.light .border-white\/10 {
-        border-color: rgba(0, 0, 0, 0.1);
+      .red-pulse { animation: red-pulse 2.5s ease-in-out infinite; }
+
+      /* ── Focus Styles (Accessibility) ──────────── */
+      :focus-visible {
+        outline: 2px solid #FF6B00;
+        outline-offset: 3px;
+        border-radius: 4px;
       }
 
-      ::-webkit-scrollbar {
-        width: 10px;
+      /* ── Light Mode Text Overrides ──────────── */
+      html.light .text-gray-300,
+      html.light .text-gray-400 { color: #4B5563; }
+      html.light .text-gray-500 { color: #6B7280; }
+      html.light .text-white { color: #111827; }
+      html.light .hover\:text-white:hover { color: #000000; }
+      html.light .bg-white\/5 { background-color: rgba(0, 0, 0, 0.05); }
+      html.light .border-white\/10 { border-color: rgba(0, 0, 0, 0.1); }
+
+      /* ── Custom Scrollbar ─────────────────────── */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #0A0A0A; }
+      ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #D90429, #8D99AE); border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #D90429; }
+
+      /* ── Selection Highlight ─────────────────── */
+      ::selection { background: rgba(217,4,41,0.45); color: #EDF2F4; }
+
+      /* ── Image Loading Optimization ──────────── */
+      img {
+        max-width: 100%;
+        height: auto;
       }
-      ::-webkit-scrollbar-track {
-        background: var(--bg-color);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #3B82F6;
-        border-radius: 5px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #06B6D4;
+
+      /* ── Reduced Motion Support ───────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+
+
+
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+
   <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <!-- App Root -->
+    <div id="root" role="application" aria-label="Yash Kapure Portfolio"></div>
+
+    <!-- App Entry Point -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

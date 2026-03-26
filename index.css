@@ -1,3 +1,356 @@
-/* Additional CSS styles for the portfolio */
-/* Most styles are defined in index.html, but this file can be used for additional styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
+/* ─────────────────────────────────────────────────────────
+   Metropolitan Velocity — Component Styles
+   Glassmorphism DevOps Loader + Snowfall + Animations
+───────────────────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════
+   DevOps Loader — iOS 26 Glassmorphism
+══════════════════════════════════════════ */
+.devops-loader-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  /* 75% Crystal Black backdrop — deep glass room */
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+.devops-loader-card {
+  position: relative;
+  padding: 2rem 2.5rem;
+  max-width: 440px;
+  width: 90%;
+  border-radius: 1.5rem;
+  /* 30% Crystal Black glass fill */
+  background: rgba(10, 10, 10, 0.30);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 0.5px solid rgba(141, 153, 174, 0.22);
+  border-top-color: rgba(141, 153, 174, 0.42);
+  border-left-color: rgba(141, 153, 174, 0.30);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    inset 0 0 50px rgba(55, 59, 62, 0.18),
+    0 0 0 0.5px rgba(217, 4, 41, 0.18);
+  overflow: hidden;
+}
+
+/* Rotating conic red glow on the card edge */
+.devops-loader-card__glow {
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(217, 4, 41, 0.16) 60deg,
+    transparent 120deg
+  );
+  animation: devops-orbit 8s linear infinite;
+  pointer-events: none;
+}
+
+.devops-loader-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.devops-loader-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.devops-loader-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 0.5px solid rgba(217, 4, 41, 0.5);
+  box-shadow: 0 0 14px rgba(217, 4, 41, 0.35);
+}
+
+.devops-loader-title {
+  font-family: "cc-schools-out-solid", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #EDF2F4;
+}
+
+.devops-loader-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.70rem;
+  color: #8D99AE;
+}
+
+.devops-loader-pipeline {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.4rem;
+  background: rgba(10, 10, 10, 0.50);
+  border: 0.5px solid rgba(141, 153, 174, 0.20);
+}
+
+.devops-loader-bar-track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.80);
+  overflow: hidden;
+}
+
+.devops-loader-bar {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #D90429, #8D99AE, #EDF2F4, #D90429);
+  background-size: 200% 100%;
+  border-radius: 999px;
+  transform-origin: left;
+}
+
+.devops-loader-stages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.45rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.68rem;
+  color: rgba(141, 153, 174, 0.70);
+}
+
+.devops-loader-stage--active { color: #EDF2F4; }
+
+.devops-loader-stage-dot {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  margin-right: 0.25rem;
+  background: #D90429;
+  box-shadow: 0 0 8px rgba(217, 4, 41, 0.75);
+}
+
+.devops-loader-terminal {
+  width: 100%;
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem 0.8rem;
+  background: rgba(10, 10, 10, 0.40);
+  border: 0.5px solid rgba(141, 153, 174, 0.18);
+  border-top-color: rgba(141, 153, 174, 0.32);
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.40);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  color: #EDF2F4;
+}
+
+.devops-loader-terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: #8D99AE;
+}
+
+.devops-loader-terminal-dots { display: flex; gap: 0.25rem; }
+
+.devops-loader-terminal-dots span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+}
+.devops-loader-terminal-dots span:nth-child(1) { background: rgba(217, 4,  41, 0.85); }
+.devops-loader-terminal-dots span:nth-child(2) { background: rgba(141,153,174, 0.65); }
+.devops-loader-terminal-dots span:nth-child(3) { background: rgba(237,242,244, 0.40); }
+
+.devops-loader-terminal-body {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem 0.5rem;
+  background: rgba(10, 10, 10, 0.30);
+  border: 0.5px solid rgba(217, 4, 41, 0.20);
+  min-height: 3.5rem;
+}
+
+.devops-loader-line {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+.devops-loader-line + .devops-loader-line { margin-top: 0.2rem; }
+
+.devops-loader-prompt { color: #D90429; font-weight: 600; }
+
+.devops-loader-cursor {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.8rem;
+  background: rgba(237, 242, 244, 0.75);
+  margin-left: 0.2rem;
+  border-radius: 2px;
+}
+
+/* ══════════════════════════════════════════
+   Snowfall Effect
+══════════════════════════════════════════ */
+.snowfall {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  /* Tinted with Alloy Silver for the MV palette */
+  background: rgba(141, 153, 174, 0.55);
+  box-shadow: 0 0 6px rgba(141, 153, 174, 0.4);
+  opacity: 0.6;
+  animation-name: snowfall-move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.snowflake:nth-child(odd)  { width: 5px; height: 5px; opacity: 0.40; }
+.snowflake:nth-child(3n)   { width: 9px; height: 9px; opacity: 0.55; }
+.snowflake:nth-child(5n)   { width: 4px; height: 4px; opacity: 0.30; }
+
+.snowflake:nth-child(1)  { left: 2%;  animation-duration: 10s; animation-delay: 0s; }
+.snowflake:nth-child(2)  { left: 8%;  animation-duration: 12s; animation-delay: 1s; }
+.snowflake:nth-child(3)  { left: 15%; animation-duration: 9s;  animation-delay: 2s; }
+.snowflake:nth-child(4)  { left: 22%; animation-duration: 11s; animation-delay: 0.5s; }
+.snowflake:nth-child(5)  { left: 28%; animation-duration: 13s; animation-delay: 3s; }
+.snowflake:nth-child(6)  { left: 35%; animation-duration: 10s; animation-delay: 1.8s; }
+.snowflake:nth-child(7)  { left: 42%; animation-duration: 14s; animation-delay: 0.2s; }
+.snowflake:nth-child(8)  { left: 48%; animation-duration: 11s; animation-delay: 2.4s; }
+.snowflake:nth-child(9)  { left: 54%; animation-duration: 13s; animation-delay: 1.1s; }
+.snowflake:nth-child(10) { left: 60%; animation-duration: 10s; animation-delay: 2.8s; }
+.snowflake:nth-child(11) { left: 66%; animation-duration: 12s; animation-delay: 0.7s; }
+.snowflake:nth-child(12) { left: 72%; animation-duration: 9s;  animation-delay: 3.4s; }
+.snowflake:nth-child(13) { left: 78%; animation-duration: 14s; animation-delay: 1.6s; }
+.snowflake:nth-child(14) { left: 84%; animation-duration: 11s; animation-delay: 0.9s; }
+.snowflake:nth-child(15) { left: 90%; animation-duration: 13s; animation-delay: 2.1s; }
+
+/* ══════════════════════════════════════════
+   Rainfall Effect
+══════════════════════════════════════════ */
+.rainfall {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.raindrop {
+  position: absolute;
+  top: -20px;
+  width: 2px;
+  height: 25px;
+  border-radius: 999px;
+  /* Adjusting to match the theme color */
+  background: linear-gradient(transparent, rgba(141, 153, 174, 0.8));
+  opacity: 0.6;
+  animation-name: rainfall-move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.raindrop:nth-child(odd)  { width: 1px; height: 18px; opacity: 0.40; }
+.raindrop:nth-child(3n)   { width: 3px; height: 35px; opacity: 0.55; }
+.raindrop:nth-child(5n)   { width: 1.5px; height: 22px; opacity: 0.30; }
+
+.raindrop:nth-child(1)  { left: 2%;  animation-duration: 1.2s; animation-delay: 0s; }
+.raindrop:nth-child(2)  { left: 8%;  animation-duration: 1.5s; animation-delay: 0.4s; }
+.raindrop:nth-child(3)  { left: 15%; animation-duration: 1.1s; animation-delay: 0.8s; }
+.raindrop:nth-child(4)  { left: 22%; animation-duration: 1.4s; animation-delay: 0.2s; }
+.raindrop:nth-child(5)  { left: 28%; animation-duration: 1.6s; animation-delay: 0.5s; }
+.raindrop:nth-child(6)  { left: 35%; animation-duration: 1.3s; animation-delay: 0.1s; }
+.raindrop:nth-child(7)  { left: 42%; animation-duration: 1.7s; animation-delay: 0.9s; }
+.raindrop:nth-child(8)  { left: 48%; animation-duration: 1.4s; animation-delay: 0.3s; }
+.raindrop:nth-child(9)  { left: 54%; animation-duration: 1.5s; animation-delay: 0.6s; }
+.raindrop:nth-child(10) { left: 60%; animation-duration: 1.2s; animation-delay: 0.7s; }
+.raindrop:nth-child(11) { left: 66%; animation-duration: 1.4s; animation-delay: 0.2s; }
+.raindrop:nth-child(12) { left: 72%; animation-duration: 1.1s; animation-delay: 1.0s; }
+.raindrop:nth-child(13) { left: 78%; animation-duration: 1.7s; animation-delay: 0.5s; }
+.raindrop:nth-child(14) { left: 84%; animation-duration: 1.3s; animation-delay: 0.4s; }
+.raindrop:nth-child(15) { left: 90%; animation-duration: 1.5s; animation-delay: 0.8s; }
+.raindrop:nth-child(16) { left: 5%;  animation-duration: 1.4s; animation-delay: 0.3s; }
+.raindrop:nth-child(17) { left: 18%; animation-duration: 1.6s; animation-delay: 0.7s; }
+.raindrop:nth-child(18) { left: 32%; animation-duration: 1.2s; animation-delay: 0.1s; }
+.raindrop:nth-child(19) { left: 45%; animation-duration: 1.5s; animation-delay: 0.9s; }
+.raindrop:nth-child(20) { left: 58%; animation-duration: 1.3s; animation-delay: 0.4s; }
+.raindrop:nth-child(21) { left: 70%; animation-duration: 1.7s; animation-delay: 0.2s; }
+.raindrop:nth-child(22) { left: 82%; animation-duration: 1.1s; animation-delay: 0.6s; }
+.raindrop:nth-child(23) { left: 95%; animation-duration: 1.4s; animation-delay: 0.5s; }
+.raindrop:nth-child(24) { left: 12%; animation-duration: 1.5s; animation-delay: 0.8s; }
+.raindrop:nth-child(25) { left: 25%; animation-duration: 1.2s; animation-delay: 0.3s; }
+.raindrop:nth-child(26) { left: 38%; animation-duration: 1.6s; animation-delay: 0.7s; }
+.raindrop:nth-child(27) { left: 51%; animation-duration: 1.3s; animation-delay: 0.1s; }
+.raindrop:nth-child(28) { left: 63%; animation-duration: 1.5s; animation-delay: 0.9s; }
+.raindrop:nth-child(29) { left: 75%; animation-duration: 1.4s; animation-delay: 0.4s; }
+.raindrop:nth-child(30) { left: 88%; animation-duration: 1.7s; animation-delay: 0.2s; }
+
+/* ══════════════════════════════════════════
+   Keyframes
+══════════════════════════════════════════ */
+@keyframes devops-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes devops-progress {
+  0%   { transform: translateX(-60%) scaleX(0.3); background-position: 0% 50%; }
+  50%  { transform: translateX(0%)   scaleX(1);   background-position: 50% 50%; }
+  100% { transform: translateX(60%)  scaleX(0.4); background-position: 100% 50%; }
+}
+
+@keyframes snowfall-move {
+  0%   { transform: translate3d(0, -10px, 0); }
+  50%  { transform: translate3d(0, 50vh, 0); }
+  100% { transform: translate3d(0, 110vh, 0); }
+}
+
+@keyframes rainfall-move {
+  0%   { transform: translate3d(0, -50px, 0) rotate(25deg); }
+  100% { transform: translate3d(400px, 110vh, 0) rotate(25deg); }
+}
+
+/* ── Shimmer utility (glass highlight sweep) */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #8D99AE 0%, #EDF2F4 40%, #D90429 60%, #8D99AE 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3.5s linear infinite;
+}
+
+/* ── Float utility */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.float-gentle { animation: float-gentle 5s ease-in-out infinite; }

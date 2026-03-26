@@ -4,9 +4,10 @@ import { TECH_STACK } from '../constants';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="py-16 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.h2 
+        <motion.h2
+          id="about-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -98,15 +99,19 @@ const About: React.FC = () => {
                     
                     {/* Profile Image Container */}
                     <div className="absolute inset-2 rounded-full overflow-hidden shadow-2xl z-20 border-4 border-bg-card">
-                        <motion.img 
-                            src="./Assets/img/Profile.jpg" 
-                            alt="Profile" 
+                        <motion.img
+                            src="./Assets/img/Profile.jpg"
+                            alt="Yash Kapure – AWS & DevOps Engineer, Mumbai"
+                            width="224"
+                            height="224"
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover filter grayscale transition-all duration-500 group-hover:grayscale-0"
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.3 }}
                         />
                         {/* Overlay on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
                     </div>
                     
                     {/* Glow effect */}

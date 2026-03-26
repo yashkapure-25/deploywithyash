@@ -38,6 +38,7 @@ export const NAV_LINKS = [
   { name: 'Courses', href: '#courses' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
+  { name: 'Blog', href: 'https://medium.com/@ypkapure74' },
 ];
 
 export const HERO_ROLES = [
@@ -62,52 +63,92 @@ export const TECH_STACK = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "AWS Auto-Scaling Web App",
-    description: "Designed a highly available web architecture handling varying traffic loads automatically.",
-    tags: ["AWS", "Terraform", "AutoScaling"],
-    techStack: ["EC2", "ALB", "CloudWatch", "Terraform", "GitHub Actions"],
-    image: "https://picsum.photos/600/400?random=1",
+    title: "Launching a Web Server on Amazon EC2",
+    description: "Configured an EC2 instance as a production-grade web server with Security Groups, Elastic IPs, and SSH access for a secure and accessible environment.",
+    tags: ["AWS", "EC2", "Security"],
+    techStack: ["Amazon EC2", "Security Groups", "Elastic IP", "SSH"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
     link: "#",
-    livePreview: "#"
+    livePreview: "#",
   },
   {
     id: 2,
-    title: "CI/CD Pipeline with Jenkins",
-    description: "End-to-end automation pipeline for microservices deployment reducing manual intervention by 90%.",
-    tags: ["DevOps", "CI/CD", "Docker"],
-    techStack: ["Jenkins", "Docker", "AWS EC2", "Shell Scripting", "SonarQube"],
-    image: "https://picsum.photos/600/400?random=2",
+    title: "Static Website Hosting Using Amazon S3",
+    description: "Hosted a static website on S3 with CloudFront CDN for global low-latency delivery and IAM roles to enforce secure, least-privilege access control.",
+    tags: ["AWS", "S3", "CloudFront"],
+    techStack: ["Amazon S3", "CloudFront", "AWS IAM", "ACM"],
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
     link: "#",
-    livePreview: "#"
+    livePreview: "#",
   },
   {
     id: 3,
-    title: "Kubernetes Deployment on EKS",
-    description: "Orchestrated a multi-container application with monitoring and auto-healing capabilities.",
-    tags: ["Kubernetes", "Monitoring", "Cloud"],
-    techStack: ["EKS", "Prometheus", "Grafana", "Helm", "Ingress Controller"],
-    image: "https://picsum.photos/600/400?random=3",
+    title: "Auto Scaling Implementation",
+    description: "Implemented Auto Scaling groups to dynamically adjust EC2 capacity under variable traffic loads, paired with ELB for high availability and even traffic distribution.",
+    tags: ["AWS", "Auto Scaling", "ELB"],
+    techStack: ["AWS Auto Scaling", "Elastic Load Balancer", "Amazon EC2", "CloudWatch"],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
     link: "#",
-    livePreview: "#"
+    livePreview: "#",
+  },
+  {
+    id: 4,
+    title: "Serverless Real-Time Chat Application",
+    description: "Built a serverless real-time chat app using Lambda functions triggered via API Gateway, delivering low-latency, infinitely scalable communication without managing servers.",
+    tags: ["Serverless", "Lambda", "API Gateway"],
+    techStack: ["AWS Lambda", "Amazon API Gateway", "Amazon DynamoDB", "WebSocket API"],
+    image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?w=600&h=400&fit=crop",
+    link: "#",
+    livePreview: "#",
+  },
+  {
+    id: 5,
+    title: "3-Tier Web Architecture on AWS",
+    description: "Built a secure, scalable 3-tier web app — S3 frontend via Route 53 + ACM, EC2 backend behind ELB in a VPC, and RDS MySQL data layer with CI/CD via GitHub Actions.",
+    tags: ["AWS", "Architecture", "CI/CD"],
+    techStack: ["Amazon S3", "Route 53", "ACM", "EC2", "Auto Scaling", "ELB", "VPC", "IAM", "NGINX", "Amazon RDS (MySQL)", "CloudWatch", "GitHub Actions"],
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop",
+    link: "https://github.com/yashkapure-25/aws-3-tier-web-architecture",
+    livePreview: "#",
   }
 ];
+
 
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    company: "GenieUs Tech",
+    company: "Genie US Tech",
     role: "AWS & DevOps Intern",
-    period: "Aug 2024 – Jun 2025",
+    period: "Nov 2024 – Jun 2025 · 8 mos",
+    location: "Bangalore · Remote",
+    type: "Internship",
     icon: Cloud,
     responsibilities: [
-      "Built CI/CD pipelines using Jenkins & GitHub Actions.",
-      "Automated AWS deployments via Terraform & CloudFormation.",
-      "Managed EC2, S3, IAM, Lambda, and CloudWatch resources.",
-      "Dockerized legacy workloads and assisted with K8s migration.",
-      "Developed monitoring dashboards and cost-optimization scripts."
-    ]
+      "Supported cloud infrastructure on AWS with EC2, S3, IAM, CloudWatch, Lambda, and RDS.",
+      "Provisioned infrastructure using CloudFormation and Terraform.",
+      "Automated deployments using Jenkins CI/CD pipelines and Docker containers.",
+      "Monitored application and system performance using CloudWatch and log management tools.",
+      "Applied IAM security policies and cost optimization techniques.",
+      "Worked in a hybrid environment with real-time ticket handling and escalations."
+    ],
+    skills: ["Amazon Web Services (AWS)", "Amazon EC2", "Amazon S3", "IAM", "CloudWatch", "Lambda", "RDS", "Terraform", "Jenkins", "Docker"]
+  },
+  {
+    id: 2,
+    company: "Forage (Amazon Web Services)",
+    role: "Solutions Architecture Job Simulation",
+    period: "Dec 2024 · 1 mo",
+    location: "Mumbai, Maharashtra, India · Remote",
+    type: "Internship",
+    icon: Layers,
+    responsibilities: [
+      "Designed a simple and scalable hosting architecture based on AWS Elastic Beanstalk for a client experiencing significant growth and slow response times.",
+      "Described the proposed architecture in plain language ensuring the client understood how it works and how costs will be calculated."
+    ],
+    skills: ["Amazon Web Services (AWS)", "Solution Architecture", "Elastic Beanstalk", "Cost Estimation", "Technical Communication"]
   }
 ];
+
 
 export const EDUCATION_TIMELINE: EducationStage[] = [
   {

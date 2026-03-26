@@ -121,9 +121,9 @@ const Contact: React.FC = () => {
   const [state, handleSubmit] = useForm('mpwvjlyw');
 
   return (
-    <section id="contact" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="contact" aria-labelledby="contact-heading" className="py-16 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-3xl md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 text-gradient-rainbow pb-2">
+        <h2 id="contact-heading" className="text-3xl md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 text-gradient-rainbow pb-2">
           Get In Touch
         </h2>
 
@@ -140,14 +140,14 @@ const Contact: React.FC = () => {
 
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-center group">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent-pink/10 border border-accent-pink/30 flex items-center justify-center mr-4 md:mr-5 group-hover:scale-110 transition-transform shrink-0">
-                  <Mail className="text-accent-pink" size={18} />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(217,4,41,0.1)] border border-[rgba(217,4,41,0.3)] flex items-center justify-center mr-4 md:mr-5 group-hover:scale-110 group-hover:bg-[#D90429] transition-all duration-300 shrink-0">
+                  <Mail className="text-[#D90429] group-hover:text-[#EDF2F4] transition-colors" size={18} />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-xs text-gray-500 uppercase tracking-wider font-bold">Email</p>
+                  <p className="text-xs text-[#8D99AE] uppercase tracking-wider font-bold">Email</p>
                   <a
                     href="mailto:kapure.yashp25@gmail.com"
-                    className="text-base md:text-lg font-medium text-white hover:text-accent-pink transition-colors truncate block"
+                    className="text-base md:text-lg font-medium text-[#EDF2F4] hover:text-[#D90429] transition-colors truncate block"
                   >
                     kapure.yashp25@gmail.com
                   </a>
@@ -155,22 +155,22 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-center group">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent-blue/10 border border-accent-blue/30 flex items-center justify-center mr-4 md:mr-5 group-hover:scale-110 transition-transform shrink-0">
-                  <MapPin className="text-accent-blue" size={18} />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(217,4,41,0.1)] border border-[rgba(217,4,41,0.3)] flex items-center justify-center mr-4 md:mr-5 group-hover:scale-110 group-hover:bg-[#D90429] transition-all duration-300 shrink-0">
+                  <MapPin className="text-[#D90429] group-hover:text-[#EDF2F4] transition-colors" size={18} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider font-bold">Location</p>
-                  <p className="text-base md:text-lg font-medium text-white">Mumbai, Mh, In</p>
+                  <p className="text-xs text-[#8D99AE] uppercase tracking-wider font-bold">Location</p>
+                  <p className="text-base md:text-lg font-medium text-[#EDF2F4]">Mumbai, Mh, In</p>
                 </div>
               </div>
 
               <div className="flex items-center group">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-accent-purple/10 border border-accent-purple/30 flex items-center justify-center mr-4 md:mr-5 group-hover:scale-110 transition-transform shrink-0">
-                  <Phone className="text-accent-purple" size={18} />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[rgba(217,4,41,0.1)] border border-[rgba(217,4,41,0.3)] flex items-center justify-center mr-4 md:mr-5 group-hover:scale-110 group-hover:bg-[#D90429] transition-all duration-300 shrink-0">
+                  <Phone className="text-[#D90429] group-hover:text-[#EDF2F4] transition-colors" size={18} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider font-bold">Phone</p>
-                  <p className="text-base md:text-lg font-medium text-white">+91 8669207321</p>
+                  <p className="text-xs text-[#8D99AE] uppercase tracking-wider font-bold">Phone</p>
+                  <p className="text-base md:text-lg font-medium text-[#EDF2F4]">+91 8669207321</p>
                 </div>
               </div>
             </div>
@@ -196,6 +196,9 @@ const Contact: React.FC = () => {
                     type="text"
                     name="name"
                     required
+                    autoComplete="name"
+                    aria-label="Your full name"
+                    aria-required="true"
                     className="w-full bg-[#0A0E27]/50 border border-gray-700 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all text-sm md:text-base"
                     placeholder="your name"
                   />
@@ -213,6 +216,9 @@ const Contact: React.FC = () => {
                     type="email"
                     name="email"
                     required
+                    autoComplete="email"
+                    aria-label="Your email address"
+                    aria-required="true"
                     className="w-full bg-[#0A0E27]/50 border border-gray-700 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all text-sm md:text-base"
                     placeholder="yourname@gmail.com"
                   />

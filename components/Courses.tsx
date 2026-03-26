@@ -4,9 +4,9 @@ import { BookOpen, ExternalLink } from 'lucide-react';
 
 const Courses: React.FC = () => {
   return (
-    <section id="courses" className="py-16 md:py-24 relative">
+    <section id="courses" aria-labelledby="courses-heading" className="py-16 md:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 text-gradient-rainbow pb-2">
+        <h2 id="courses-heading" className="text-3xl md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 text-gradient-rainbow pb-2">
           Completed Courses
         </h2>
 
@@ -35,13 +35,14 @@ const Courses: React.FC = () => {
                 ))}
               </div>
               
-              <a 
-                href={course.link} 
+              <a
+                href={course.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full btn-gradient text-white py-3 rounded-xl font-bold flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity group-hover:scale-105 transform duration-300"
+                aria-label={`View ${course.title} course on ${course.provider} (opens in new tab)`}
+                className="w-full btn-gradient text-white py-3 rounded-xl font-bold flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity group-hover:scale-105 transform duration-300 focus-visible:outline-2"
               >
-                <ExternalLink size={18} className="mr-2" />
+                <ExternalLink size={18} className="mr-2" aria-hidden="true" />
                 View Course
               </a>
             </div>

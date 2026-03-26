@@ -4,14 +4,15 @@ import { EDUCATION_TIMELINE } from '../constants';
 
 const EduVerse: React.FC = () => {
   return (
-    <section id="eduverse" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="eduverse" aria-labelledby="eduverse-heading" className="py-16 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2
+          id="eduverse-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-heading font-bold text-center mb-12 md:mb-16 text-gradient-rainbow pb-2">
-          EduVerse
+          EduVerse — Education Timeline
         </motion.h2>
 
         <div className="relative">
