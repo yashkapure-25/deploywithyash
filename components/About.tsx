@@ -100,7 +100,7 @@ const About: React.FC = () => {
                     {/* Profile Image Container */}
                     <div className="absolute inset-2 rounded-full overflow-hidden shadow-2xl z-20 border-4 border-bg-card">
                         <motion.img
-                            src="./Assets/img/Profile.jpg"
+                            src="../Assets/img/Profile.jpg"
                             alt="Yash Kapure – AWS & DevOps Engineer, Mumbai"
                             width="224"
                             height="224"
