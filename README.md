@@ -85,6 +85,7 @@ Feel free to connect with me for opportunities, collaborations, or discussions!
 <p align="center">
   <a href="https://deploywithyash.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel"></a>
   <a href="https://linkedin.com/in/yash-kapure-full-stackdeveloper"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin"></a>
+    <a href="(https://github.com/yashkapure-25"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"></a>
   <a href="mailto:ypkapure74@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail"></a>
 </p>
 
