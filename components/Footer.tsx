@@ -138,23 +138,6 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-
-            {/* Legal Links */}
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mt-7 mb-4">
-              Legal
-            </h3>
-            <ul className="space-y-2.5">
-              <li>
-                <span className="text-sm text-gray-500 cursor-default">
-                  Privacy Policy
-                </span>
-              </li>
-              <li>
-                <span className="text-sm text-gray-500 cursor-default">
-                  Terms of Service
-                </span>
-              </li>
-            </ul>
           </motion.div>
 
           {/* Column 4: Social Links & Resume */}
